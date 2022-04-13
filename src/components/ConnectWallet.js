@@ -1,4 +1,6 @@
 import { useWallet, WalletStatus } from '@terra-dev/use-wallet'
+import App from '../App'
+import '../App.css'
 
 export const ConnectWallet = () => {
   const {

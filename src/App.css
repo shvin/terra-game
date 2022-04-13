@@ -31,6 +31,26 @@
   color: white;
 }
 
+button {
+  height: 45px;
+  border: 0;
+  width: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-image: linear-gradient(
+    to top,
+    #8ee9ec 0%,
+    #5474dd 100%
+  );
+  background-size: 100% 100%;
+  animation: gradient-animation 4s ease infinite;
+}
+
 /* footer */
 .footer-container {
   display: flex;

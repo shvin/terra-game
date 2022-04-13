@@ -18,7 +18,6 @@ const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 function App() {
   const [count, setCount] = useState(null)
   const [updating, setUpdating] = useState(true)
-  const [resetValue, setResetValue] = useState(0)
 
   const { status } = useWallet()
 
@@ -34,42 +33,12 @@ function App() {
     prefetch()
   }, [connectedWallet])
 
-  const onClickIncrement = async () => {
-    setUpdating(true)
-    await execute.increment(connectedWallet)
-    setCount((await query.getCount(connectedWallet)).count)
-    setUpdating(false)
-  }
-
-  const onClickReset = async () => {
-    setUpdating(true)
-    console.log(resetValue)
-    await execute.reset(connectedWallet, resetValue)
-    setCount((await query.getCount(connectedWallet)).count)
-    setUpdating(false)
-  }
-
   return (
     <div className="App">
       <div className="container">
         <div className="header-container">
           <p className="header gradient-text">⚔️ Goblin War ⚔️</p>
           <p className="header sub-text">Only you can save us from Goblin town</p>
-          <div className="connect-buttons">
-            {status === WalletStatus.WALLET_CONNECTED && (
-              <div style={{ display: 'inline' }}>
-                <input
-                  type="number"
-                  onChange={(e) => setResetValue(+e.target.value)}
-                  value={resetValue}
-                />
-                <button onClick={onClickReset} type="button">
-                  {' '}
-                  reset{' '}
-                </button>
-              </div>
-            )}
-          </div>
         </div>
         <ConnectWallet />
         <div className="footer-container">
