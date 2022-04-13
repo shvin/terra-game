@@ -1,5 +1,3 @@
-import './App.css'
-
 import { useEffect, useState } from 'react'
 import {
   useWallet,
@@ -7,6 +5,7 @@ import {
   WalletStatus,
 } from '@terra-money/wallet-provider'
 
+import './App.css'
 import * as execute from './contract/execute'
 import * as query from './contract/query'
 import { ConnectWallet } from './components/ConnectWallet'
