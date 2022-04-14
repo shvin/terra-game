@@ -31,30 +31,40 @@
   color: white;
 }
 
+.connect-container {
+  
+}
+
 button {
   height: 45px;
   border: 0;
   width: auto;
   padding-left: 10px;
   padding-right: 10px;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
   font-weight: bold;
   color: white;
   background-image: linear-gradient(
     to top,
-    #8ee9ec 0%,
-    #5474dd 100%
+    #a7eee4 0%,
+    #69e4d3 21%,
+    #53ffe8 52%,
+    #43f1da 78%,
+    #09b8a0 100%
   );
-  background-size: 100% 100%;
+  background-size: 200% 200%;
   animation: gradient-animation 4s ease infinite;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
 .goblin-gif {
   width: 45%;
   height: auto;
   margin: 0 auto;
+  padding-bottom: 20px;
 }
 
 /* footer */
