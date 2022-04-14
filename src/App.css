@@ -51,6 +51,12 @@ button {
   animation: gradient-animation 4s ease infinite;
 }
 
+.goblin-gif {
+  width: 45%;
+  height: auto;
+  margin: 0 auto;
+}
+
 /* footer */
 .footer-container {
   display: flex;

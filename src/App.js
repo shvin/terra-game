@@ -10,6 +10,7 @@ import * as execute from './contract/execute'
 import * as query from './contract/query'
 import { ConnectWallet } from './components/ConnectWallet'
 import twitterLogo from "./assets/twitter-logo.svg";
+import goblinGif from "./assets/goblin.gif";
 
 const TWITTER_HANDLE = "_buildspace";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
@@ -39,7 +40,10 @@ function App() {
           <p className="header gradient-text">⚔️ Goblin War ⚔️</p>
           <p className="header sub-text">Only you can save us from Goblin town</p>
         </div>
-        <ConnectWallet />
+        <div className="connect-container">
+          <img alt="Goblin" className='goblin-gif' src={goblinGif} />
+          <ConnectWallet />
+        </div>
         <div className="footer-container">
           <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
           <a
