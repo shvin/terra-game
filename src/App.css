@@ -32,7 +32,7 @@
 }
 
 .connect-container {
-  
+
 }
 
 button {
@@ -48,11 +48,11 @@ button {
   color: white;
   background-image: linear-gradient(
     to top,
-    #a7eee4 0%,
-    #69e4d3 21%,
-    #53ffe8 52%,
-    #43f1da 78%,
-    #09b8a0 100%
+    #dfeb9f 0%,
+    #e0f0b6 21%,
+    #bbf595 52%,
+    #a9f38b 78%,
+    #83fa89 100%
   );
   background-size: 200% 200%;
   animation: gradient-animation 4s ease infinite;
