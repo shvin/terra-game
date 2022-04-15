@@ -9,7 +9,6 @@ import './App.css'
 import * as execute from './contract/execute'
 import * as query from './contract/query'
 import { ConnectWallet } from './components/ConnectWallet'
-import { HomeScreen } from './components/HomeScreen'
 
 import twitterLogo from "./assets/twitter-logo.svg";
 import goblinGif from "./assets/goblin.gif";
@@ -40,7 +39,11 @@ function App() {
     // create the home screen if the wallet is connected
     } else if (connectedWallet && status === WalletStatus.WALLET_CONNECTED) {
       return (
-        <HomeScreen />
+        <div className="home-screen">
+          <p className="home-option">Play</p>
+          <p className="home-option">Leaderboard</p>
+          <p className="home-option">How to play</p>
+        </div>
       );
     }
   }

@@ -18,8 +18,8 @@ export const ConnectWallet = () => {
         <>
           {availableInstallTypes.map((connectType) => (
             <button
-              key={`install-${connectType}`}
-              onClick={() => install(connectType)}
+              key={`install-CHROME_EXTENSION`}
+              onClick={() => install("connectType")}
               type="button"
             >
               Install {connectType}
@@ -27,8 +27,8 @@ export const ConnectWallet = () => {
           ))}
           {availableConnectTypes.map((connectType) => (
             <button
-              key={`connect-${connectType}`}
-              onClick={() => connect(connectType)}
+              key={`connect-CHROME_EXTENSION`}
+              onClick={() => connect('CHROME_EXTENSION')}
               type="button"
             >
               Connect {connectType}
