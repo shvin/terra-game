@@ -77,6 +77,10 @@ button {
   padding-top: 50px;
 }
 
+.home-screen p.home-option:hover {
+  color: #4aec3b;
+}
+
 /* footer */
 .footer-container {
   display: flex;

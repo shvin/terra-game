@@ -1,6 +1,4 @@
 import React from 'react';
-import { Game } from './Game';
-import { Leaderboard } from './Leaderboard';
 
 import '../App.css';
 

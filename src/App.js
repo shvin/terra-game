@@ -30,13 +30,14 @@ function App() {
     if (isLoading) {
       return
     }
-    if (!connectedWallet) {
+    if (!connectedWallet || status === WalletStatus.WALLET_NOT_CONNECTED) {
       return (
         <div className="connect-container">
           <img alt="Goblin" className='goblin-gif' src={goblinGif} />
           <ConnectWallet />
         </div>
       );
+    // create the home screen if the wallet is connected
     } else if (connectedWallet && status === WalletStatus.WALLET_CONNECTED) {
       return (
         <HomeScreen />
