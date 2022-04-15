@@ -9,6 +9,8 @@ import './App.css'
 import * as execute from './contract/execute'
 import * as query from './contract/query'
 import { ConnectWallet } from './components/ConnectWallet'
+import { HomeScreen } from './components/HomeScreen'
+
 import twitterLogo from "./assets/twitter-logo.svg";
 import goblinGif from "./assets/goblin.gif";
 
@@ -18,10 +20,29 @@ const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 function App() {
   const [count, setCount] = useState(null)
   const [updating, setUpdating] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
 
   const { status } = useWallet()
 
   const connectedWallet = useConnectedWallet()
+
+  const renderContent = () => {
+    if (isLoading) {
+      return
+    }
+    if (!connectedWallet) {
+      return (
+        <div className="connect-container">
+          <img alt="Goblin" className='goblin-gif' src={goblinGif} />
+          <ConnectWallet />
+        </div>
+      );
+    } else if (connectedWallet && status === WalletStatus.WALLET_CONNECTED) {
+      return (
+        <HomeScreen />
+      );
+    }
+  }
 
   useEffect(() => {
     const prefetch = async () => {
@@ -40,9 +61,8 @@ function App() {
           <p className="header gradient-text">⚔️ Goblin War ⚔️</p>
           <p className="header sub-text">Only you can save us from Goblin town</p>
         </div>
-        <div className="connect-container">
-          <img alt="Goblin" className='goblin-gif' src={goblinGif} />
-          <ConnectWallet />
+        <div className="content-container">
+          {renderContent()}
         </div>
         <div className="footer-container">
           <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
